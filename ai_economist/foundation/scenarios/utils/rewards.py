@@ -61,6 +61,8 @@ def coin_eq_times_productivity(coin_endowments, equality_weight):
         Product of coin equality and productivity (float).
     """
     n_agents = len(coin_endowments)
+    if n_agents == 0:
+        return -1
     prod = social_metrics.get_productivity(coin_endowments) / n_agents
     equality = equality_weight * social_metrics.get_equality(coin_endowments) + (
         1 - equality_weight
@@ -78,6 +80,8 @@ def inv_income_weighted_coin_endowments(coin_endowments):
     Returns:
         Weighted average coin endowment (float).
     """
+    if len(coin_endowments) == 0:
+        return -1
     pareto_weights = 1 / np.maximum(coin_endowments, 1)
     pareto_weights = pareto_weights / np.sum(pareto_weights)
     return np.sum(coin_endowments * pareto_weights)
@@ -95,6 +99,8 @@ def inv_income_weighted_utility(coin_endowments, utilities):
     Returns:
         Weighted average utility (float).
     """
+    if len(coin_endowments) == 0:
+        return -1
     pareto_weights = 1 / np.maximum(coin_endowments, 1)
     pareto_weights = pareto_weights / np.sum(pareto_weights)
     return np.sum(utilities * pareto_weights)

@@ -94,7 +94,7 @@ class LayoutFromFile(BaseEnvironment):
 
         # Load in the layout
         path_to_layout_file = (
-            "/".join(__file__.split("/")[:-1]) + "/map_txt/" + env_layout_file
+            "/".join(__file__.split("/")[:-1]) + "C:/Users/Ben/AppData/Roaming/Python/Python36/site-packages/ai_economist/foundation/scenarios/simple_wood_and_stone/map_txt/" + env_layout_file
         )
         with open(path_to_layout_file, "r") as f:
             self.env_layout_string = f.read()

@@ -28,6 +28,8 @@ def get_gini(endowments):
         results.
     """
     n_agents = len(endowments)
+    if n_agents == 0:
+        return -1
 
     if n_agents < 30:  # Slower. Accurate for all n.
         diff_ij = np.abs(
@@ -72,4 +74,6 @@ def get_productivity(coin_endowments):
     Returns:
         Total coin endowment (float).
     """
+    if len(coin_endowments) == 0:
+        return 0
     return np.sum(coin_endowments)
