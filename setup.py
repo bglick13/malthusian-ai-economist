@@ -7,10 +7,10 @@ with open('requirements.txt') as f:
     requirements = f.read().splitlines()
 
 setuptools.setup(
-    name="ai-economist",
+    name="-malthusian-ai-economist",
     version="1.1.1",
-    author="Stephan Zheng, Alex Trott, Sunil Srinivasa",
-    author_email="stephan.zheng@salesforce.com",
+    author="Ben Glickenhaus, Connor Basich",
+    author_email="bglickenhaus@umass.edu",
     description="Foundation: An Economics Simulation Framework",
     long_description=long_description,
     long_description_content_type="text/markdown",
